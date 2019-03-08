@@ -1,4 +1,5 @@
 Spring Boot
-REST 
-Spring Data Repositories
-Spring Security (in memory users/ db users with autorization)
+REST
+Spring Data Repositories.
+Spring Security (in memory users/ db users with autorization).
+Spring Security with password encryption.

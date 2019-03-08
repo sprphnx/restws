@@ -21,6 +21,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
 		//Reading users and roles from DB
+		//the password in db has to be stored as {noop}<password> [noop -- no operation]
+		//the password in db has to be stored as {id}<password> [eg: {bcrypt}bycrytedpassword length of the db column must be 68 characters]
+				
 		auth.jdbcAuthentication().dataSource(datasource);
 		
 		//In memory user creation
@@ -56,7 +59,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		
 		http.authorizeRequests().antMatchers("/customers/**").hasRole("MGR")
 		.and().authorizeRequests().anyRequest().authenticated()
 		.and().httpBasic()
