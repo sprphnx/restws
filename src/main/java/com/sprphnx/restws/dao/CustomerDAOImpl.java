@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.sprphnx.restws.model.Customer;
+import com.sprphnx.restws.entity.Customer;
 
 @Repository
 public class CustomerDAOImpl implements CustomerDAO {

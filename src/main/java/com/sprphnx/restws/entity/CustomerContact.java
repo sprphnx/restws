@@ -1,4 +1,4 @@
-package com.sprphnx.restws.model;
+package com.sprphnx.restws.entity;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -6,10 +6,13 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -28,6 +31,8 @@ public class CustomerContact implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_CONT_ID_SEQ")
+	@SequenceGenerator(name="CUST_CONT_ID_SEQ", sequenceName = "CUST_CONT_ID_SEQ", allocationSize =1)
 	@Column(name="CUST_CONT_ID")
 	private long custContId;
 

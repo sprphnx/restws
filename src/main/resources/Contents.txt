@@ -2,4 +2,9 @@ Spring Boot
 REST
 Spring Data Repositories.
 Spring Security (in memory users/ db users with autorization).
-Spring Security with password encryption.
+Spring Security with password encryption. 
+For encrypting the password -> (https://www.dailycred.com/article/bcrypt-calculator)
+
+To do
+Log4j
+complete the crud opperation with cascading
