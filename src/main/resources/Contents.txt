@@ -1,0 +1,4 @@
+Spring Boot
+REST 
+Spring Data Repositories
+Spring Security (in memory users/ db users with autorization)
