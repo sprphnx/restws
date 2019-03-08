@@ -56,14 +56,22 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		// secures all REST endpoints under "/api/customers"
-
-		http.authorizeRequests().antMatchers("/customers/**").authenticated()
-				.and()
-				.httpBasic()
-				.and()
-				.csrf().disable()
-				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+		
+		http.authorizeRequests().antMatchers("/customers/**").hasRole("MGR")
+		.and().authorizeRequests().anyRequest().authenticated()
+		.and().httpBasic()
+		.and().csrf().disable()
+		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+		
+/*
+ * Without role authentication
+ */
+//		http.authorizeRequests().antMatchers("/customers/**").authenticated()
+//				.and()
+//				.httpBasic()
+//				.and()
+//				.csrf().disable()
+//				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 	}
 
 }
