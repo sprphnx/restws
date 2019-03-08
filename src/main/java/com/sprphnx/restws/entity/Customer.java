@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,42 +20,42 @@ import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-
 /**
  * The persistent class for the CUSTOMERS database table.
  * 
  */
 @Entity
-@Table(name="CUSTOMERS")
-@NamedQuery(name="Customer.findAll", query="SELECT c FROM Customer c")
+@Table(name = "CUSTOMERS")
+@NamedQuery(name = "Customer.findAll", query = "SELECT c FROM Customer c")
 public class Customer implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_ID_SEQ")
-	@SequenceGenerator(name="CUST_ID_SEQ", sequenceName = "CUST_ID_SEQ", allocationSize =1)
-	@Column(name="CUST_ID")
+	@SequenceGenerator(name = "CUST_ID_SEQ", sequenceName = "CUST_ID_SEQ", allocationSize = 1)
+	@Column(name = "CUST_ID")
 	private long custId;
 
-	@Column(name="CUST_NAME")
+	@Column(name = "CUST_NAME")
 	private String custName;
 
-	@Column(name="INSERTED_BY")
+	@Column(name = "INSERTED_BY")
 	private String insertedBy;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name="INSERTED_DATE")
+	@Column(name = "INSERTED_DATE")
 	private Date insertedDate;
 
-	@Column(name="LAST_UPDATED_BY")
+	@Column(name = "LAST_UPDATED_BY")
 	private String lastUpdatedBy;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name="LAST_UPDATED_DATE")
+	@Column(name = "LAST_UPDATED_DATE")
 	private Date lastUpdatedDate;
 
-	//bi-directional many-to-one association to CustomerContact
-	@OneToMany(mappedBy="customer",fetch=FetchType.LAZY)
+	// bi-directional many-to-one association to CustomerContact
+	@OneToMany(mappedBy = "customer", fetch = FetchType.LAZY
+			, cascade = { CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE})
 	@JsonManagedReference
 	private List<CustomerContact> customerContacts;
 

@@ -12,5 +12,9 @@ public interface CustomerService {
 	public Optional<Customer> getCustomerById(long id);
 
 	public void createCustomer(Customer customer);
-	
+
+	public void updateCustomer(Customer customer);
+
+	public void deleteCustomer(long id);
+
 }
