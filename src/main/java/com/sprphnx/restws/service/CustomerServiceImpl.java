@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sprphnx.restws.dao.CustomerDAO;
 import com.sprphnx.restws.entity.Customer;
 import com.sprphnx.restws.repository.CustomerRepository;
 
@@ -15,9 +14,6 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Autowired
 	CustomerRepository customerRepository;
-
-	@Autowired
-	CustomerDAO customerDAO;
 
 	@Override
 	public List<Customer> getAllCustomers() {
