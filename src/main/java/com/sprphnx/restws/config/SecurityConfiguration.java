@@ -15,7 +15,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	DataSource datasource;
+	DataSource vybhaDataSource;
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -24,7 +24,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		//the password in db has to be stored as {noop}<password> [noop -- no operation]
 		//the password in db has to be stored as {id}<password> [eg: {bcrypt}bycrytedpassword length of the db column must be 68 characters]
 				
-		auth.jdbcAuthentication().dataSource(datasource);
+		auth.jdbcAuthentication().dataSource(vybhaDataSource);
 		
 		//In memory user creation
 		//UserBuilder users = User.withDefaultPasswordEncoder();

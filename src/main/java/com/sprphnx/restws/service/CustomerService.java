@@ -3,7 +3,7 @@ package com.sprphnx.restws.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.sprphnx.restws.entity.Customer;
+import com.sprphnx.restws.entity.vybha.Customer;
 
 public interface CustomerService {
 

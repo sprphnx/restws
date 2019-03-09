@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sprphnx.restws.entity.Customer;
-import com.sprphnx.restws.repository.CustomerRepository;
+import com.sprphnx.restws.entity.vybha.Customer;
+import com.sprphnx.restws.repository.vybha.CustomerRepository;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {

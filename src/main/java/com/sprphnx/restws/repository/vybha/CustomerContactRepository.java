@@ -1,8 +1,8 @@
-package com.sprphnx.restws.repository;
+package com.sprphnx.restws.repository.vybha;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.sprphnx.restws.entity.CustomerContact;
+import com.sprphnx.restws.entity.vybha.CustomerContact;
 
 public interface CustomerContactRepository extends JpaRepository<CustomerContact, Long> {
 

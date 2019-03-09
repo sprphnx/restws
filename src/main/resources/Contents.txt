@@ -4,7 +4,14 @@ Spring Data Repositories.
 Spring Security (in memory users/ db users with autorization).
 Spring Security with password encryption. 
 For encrypting the password -> (https://www.dailycred.com/article/bcrypt-calculator)
-
-To do
+All crud opperation with cascading for Create, Merge and Delete
 Log4j
-complete the crud opperation with cascading
+Multi datasource configuration (https://www.javadevjournal.com/spring-boot/multiple-data-sources-with-spring-boot/
+							    ,https://raymondhlee.wordpress.com/2015/10/31/configuring-multiple-jpa-entity-managers-in-spring-boot/
+							    key points declaring multiple entity manager with persistance unit that is specified in the coresponding
+							    datasource configuration class using @PersistanceContext and also specifying @transaction with 
+							    the corresponding transaction manager from the configuration class)
+							    
+To Do
+1) Refactor the code
+2) Unit test cases

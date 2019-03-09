@@ -1,4 +1,4 @@
-package com.sprphnx.restws.entity;
+package com.sprphnx.restws.entity.vybha;
 
 import java.io.Serializable;
 import java.util.Date;
